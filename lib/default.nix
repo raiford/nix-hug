@@ -1,7 +1,7 @@
 { pkgs }:
 
 let
-  inherit (pkgs) fetchurl fetchGit;
+  inherit (pkgs) fetchurl fetchgit;
   inherit (builtins)
     readFile
     fromJSON
@@ -282,7 +282,7 @@ let
       filters ? null,
     }:
     let
-      gitRepo = fetchGit { inherit url rev; };
+      gitRepo = fetchgit { inherit url rev; };
 
       allLfsFiles = discoverLfsFiles gitRepo;
       filteredLfsFiles = applyFilter filters allLfsFiles;
