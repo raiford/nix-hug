@@ -1,9 +1,8 @@
 { pkgs }:
 
 let
+  inherit (pkgs) fetchurl fetchGit;
   inherit (builtins)
-    fetchurl
-    fetchGit
     readFile
     fromJSON
     ;
